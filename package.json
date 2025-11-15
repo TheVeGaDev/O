@@ -7,8 +7,9 @@
     "build": "tsc && npm run copy-assets",
     "dev": "tsc --watch",
     "serve": "npx serve dist -s",
-    "copy-assets": "mkdir -p dist/css && cp src/css/*.css dist/css/ && cp src/index.html dist/",
-    "start": "npm run build && npm run serve"
+    "copy-assets": "mkdir -p dist/css dist/assets && cp -r src/css/*.css dist/css/ && cp src/index.html dist/ && cp -r src/assets dist/ 2>/dev/null || true",
+    "start": "npm run build && npm run serve",
+    "vercel-build": "npm run build"
   },
   "devDependencies": {
     "typescript": "^5.3.3",
