@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شركة فيجا للبرمجيات | Vega Software Company</title>
+    <meta name="description" content="شركة فيجا للبرمجيات - حلول برمجية متكاملة، تطوير بوتات تيليجرام، حماية الخوادم، واستضافة موثوقة">
+    <meta name="keywords" content="برمجة, تيليجرام, بوتات, استضافة, خوادم, حماية, فيجا">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="logo-loader">
+                <span class="logo-text">VEGA</span>
+                <div class="loading-bar">
+                    <div class="loading-progress"></div>
+                </div>
+            </div>
+            <p>جاري التحميل...</p>
+        </div>
+    </div>
+
+    <!-- Floating Navigation -->
+    <nav class="floating-nav">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <span class="logo-icon">⚡</span>
+                VEGA
+            </a>
+            
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active" data-nav="home">
+                    <i class="fas fa-home"></i>
+                    <span>الرئيسية</span>
+                </a>
+                <a href="#services" class="nav-link" data-nav="services">
+                    <i class="fas fa-cogs"></i>
+                    <span>خدماتنا</span>
+                </a>
+                <a href="#projects" class="nav-link" data-nav="projects">
+                    <i class="fas fa-project-diagram"></i>
+                    <span>أعمالنا</span>
+                </a>
+                <a href="#about" class="nav-link" data-nav="about">
+                    <i class="fas fa-users"></i>
+                    <span>من نحن</span>
+                </a>
+                <a href="#contact" class="nav-link" data-nav="contact">
+                    <i class="fas fa-envelope"></i>
+                    <span>اتصل بنا</span>
+                </a>
+            </div>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-background">
+                <div class="particles-container" id="particles"></div>
+                <div class="gradient-overlay"></div>
+            </div>
+            
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span>⚡ منذ 2015</span>
+                    </div>
+                    
+                    <h1 class="hero-title">
+                        <span class="title-gradient">شركة فيجا</span>
+                        <span class="title-sub">للبرمجيات</span>
+                    </h1>
+                    
+                    <p class="hero-description">
+                        نقدم حلولاً برمجية مبتكرة تجمع بين <span class="highlight">الإبداع</span> و <span class="highlight">التقنية</span>
+                    </p>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="500">0</span>
+                            <span class="stat-label">مشروع مكتمل</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="9">0</span>
+                            <span class="stat-label">سنوات خبرة</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="50">0</span>
+                            <span class="stat-label">عميل راضي</span>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-actions">
+                        <button class="btn btn-primary" id="startProject">
+                            <i class="fas fa-rocket"></i>
+                            ابدأ مشروعك الآن
+                        </button>
+                        <button class="btn btn-secondary" id="viewPortfolio">
+                            <i class="fas fa-eye"></i>
+                            شاهد أعمالنا
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="code-animation">
+                        <div class="code-window">
+                            <div class="window-header">
+                                <div class="window-dots">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <span class="window-title">bot.py</span>
+                            </div>
+                            <div class="code-content">
+                                <pre><code>class TelegramBot:
+    def __init__(self):
+        self.power = "عالية"
+        self.security = "ممتازة"
+        
+    def start_service(self):
+        return "🤖 البوت جاهز للعمل!"</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="scroll-indicator">
+                <div class="scroll-arrow"></div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">خدماتنا المميزة</h2>
+                    <p class="section-subtitle">نقدم مجموعة متكاملة من الحلول البرمجية المتقدمة</p>
+                </div>
+                
+                <div class="services-grid" id="servicesGrid">
+                    <!-- Services will be loaded dynamically -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">أعمالنا الأخيرة</h2>
+                    <p class="section-subtitle">لمحات من مشاريعنا الناجحة</p>
+                </div>
+                
+                <div class="projects-grid" id="projectsGrid">
+                    <!-- Projects will be loaded dynamically -->
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2 class="section-title">من نحن؟</h2>
+                        <p class="about-description">
+                            منذ <strong>2015</strong>، ونحن في <span class="vega-highlight">شركة فيجا</span> نؤمن بقوة البرمجة في بناء حلول مبتكرة. 
+                            أسسنا شركتنا على يد المطورين المتخصصين لنكون شريكك الموثوق في رحلتك الرقمية.
+                        </p>
+                        
+                        <div class="team-members">
+                            <div class="team-member">
+                                <div class="member-avatar">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <h4>@TopVeGa</h4>
+                                <p>مطور بايثون متخصص</p>
+                            </div>
+                            <div class="team-member">
+                                <div class="member-avatar">
+                                    <i class="fas fa-server"></i>
+                                </div>
+                                <h4>@DevVEGA</h4>
+                                <p>خبير أنظمة وحماية</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-stats">
+                        <div class="stat-card">
+                            <i class="fas fa-code-branch"></i>
+                            <div class="stat-info">
+                                <span class="stat-number" data-count="15">0</span>
+                                <span class="stat-label">لغة برمجة</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-robot"></i>
+                            <div class="stat-info">
+                                <span class="stat-number" data-count="200">0</span>
+                                <span class="stat-label">بوت تيليجرام</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-shield-alt"></i>
+                            <div class="stat-info">
+                                <span class="stat-number" data-count="100">0</span>
+                                <span class="stat-label">نظام حماية</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">لنبدأ مشروعك معًا</h2>
+                    <p class="section-subtitle">نحن هنا لتحويل أفكارك إلى واقع رقمي</p>
+                </div>
+                
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-card">
+                            <i class="fab fa-telegram-plane"></i>
+                            <h4>تيليجرام</h4>
+                            <p>للتواصل المباشر والسريع</p>
+                            <a href="https://t.me/TopVeGa" target="_blank" class="contact-link">
+                                @TopVeGa
+                            </a>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <i class="fab fa-telegram-plane"></i>
+                            <h4>تيليجرام</h4>
+                            <p>للاستشارات التقنية</p>
+                            <a href="https://t.me/DevVEGA" target="_blank" class="contact-link">
+                                @DevVEGA
+                            </a>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <i class="fas fa-wallet"></i>
+                            <h4>الدفع</h4>
+                            <p>جميع العملات الرقمية مقبولة</p>
+                            <span class="payment-methods">
+                                <i class="fab fa-bitcoin"></i>
+                                <i class="fas fa-coins"></i>
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-container">
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-group">
+                                <label for="name">الاسم الكامل</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="service">نوع الخدمة</label>
+                                <select id="service" name="service" required>
+                                    <option value="">اختر الخدمة</option>
+                                    <option value="telegram-bot">تطوير بوت تيليجرام</option>
+                                    <option value="programming">حلول برمجية مخصصة</option>
+                                    <option value="hosting">استضافة وخوادم</option>
+                                    <option value="security">ملفات حماية</option>
+                                    <option value="other">خدمة أخرى</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">تفاصيل المشروع</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-block">
+                                <i class="fas fa-paper-plane"></i>
+                                إرسال الطلب
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span class="logo-icon">⚡</span>
+                        VEGA
+                    </div>
+                    <p class="footer-description">
+                        شركة فيجا للبرمجيات - رائدون في innovation والتطوير منذ 2015
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>خدماتنا</h4>
+                        <a href="#services">تطوير البوتات</a>
+                        <a href="#services">الحلول البرمجية</a>
+                        <a href="#services">الاستضافة</a>
+                        <a href="#services">الحماية</a>
+                    </div>
+                    
+                    <div class="link-group">
+                        <h4>شركة فيجا</h4>
+                        <a href="#about">من نحن</a>
+                        <a href="#projects">أعمالنا</a>
+                        <a href="#contact">اتصل بنا</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 شركة فيجا للبرمجيات. جميع الحقوق محفوظة.</p>
+                <p>مطور بواسطة: @TopVeGa | @DevVEGA</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Notification System -->
+    <div class="notification-container" id="notificationContainer"></div>
+
+    <!-- JavaScript -->
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
