@@ -76,7 +76,7 @@ class VegaApp {
         }
 
         // Keyboard shortcuts
-        DOMUtils.addEventListener(document, 'keydown', (e) => {
+        DOMUtils.addEventListener(document, 'keydown', (e: KeyboardEvent) => {
             if (e.ctrlKey && e.key === 'k') {
                 e.preventDefault();
                 this.navigation.navigateToSection('contact');
@@ -84,7 +84,7 @@ class VegaApp {
         });
 
         // Prevent smooth scroll on focus to improve accessibility
-        DOMUtils.addEventListener(document, 'focus', (e) => {
+        DOMUtils.addEventListener(document, 'focus', (e: Event) => {
             const target = e.target as HTMLElement;
             if (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA') {
                 document.documentElement.style.scrollBehavior = 'auto';

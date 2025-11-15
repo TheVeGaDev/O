@@ -41,24 +41,24 @@ export class DOMUtils {
      * Add event listener with type safety
      */
     static addEventListener<T extends keyof HTMLElementEventMap>(
-        element: HTMLElement,
+        element: HTMLElement | Document | Window,
         event: T,
         handler: (this: HTMLElement, ev: HTMLElementEventMap[T]) => void,
         options?: boolean | AddEventListenerOptions
     ): void {
-        element.addEventListener(event, handler, options);
+        element.addEventListener(event, handler as EventListener, options);
     }
 
     /**
      * Remove event listener
      */
     static removeEventListener<T extends keyof HTMLElementEventMap>(
-        element: HTMLElement,
+        element: HTMLElement | Document | Window,
         event: T,
         handler: (this: HTMLElement, ev: HTMLElementEventMap[T]) => void,
         options?: boolean | EventListenerOptions
     ): void {
-        element.removeEventListener(event, handler, options);
+        element.removeEventListener(event, handler as EventListener, options);
     }
 
     /**
@@ -99,7 +99,7 @@ export class DOMUtils {
         func: T,
         delay: number
     ): (...args: Parameters<T>) => void {
-        let timeoutId: NodeJS.Timeout;
+        let timeoutId: number;
         return (...args: Parameters<T>) => {
             clearTimeout(timeoutId);
             timeoutId = setTimeout(() => func.apply(this, args), delay);
