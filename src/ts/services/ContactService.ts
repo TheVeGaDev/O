@@ -6,6 +6,7 @@ export interface ContactFormData {
     email: string;
     service: string;
     message: string;
+    [key: string]: string; // Add index signature
 }
 
 export class ContactService {
@@ -117,8 +118,16 @@ export class ContactService {
             message: formData.get('message') as string
         };
 
+        // Convert to Record<string, string> for validation
+        const validationData: Record<string, string> = {
+            name: data.name,
+            email: data.email,
+            service: data.service,
+            message: data.message
+        };
+
         // Validate form data
-        const validation = ValidationUtils.validateForm(data);
+        const validation = ValidationUtils.validateForm(validationData);
         if (!validation.isValid) {
             this.notification.error('خطأ في الإدخال', validation.errors.join('\n'));
             return;
