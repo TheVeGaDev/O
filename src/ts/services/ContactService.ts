@@ -1,6 +1,12 @@
 import { NotificationSystem } from '../components/Notification';
 import { ValidationUtils } from '../utils';
-import { FormData } from '../types';
+
+export interface ContactFormData {
+    name: string;
+    email: string;
+    service: string;
+    message: string;
+}
 
 export class ContactService {
     private notification: NotificationSystem;
@@ -104,7 +110,7 @@ export class ContactService {
      */
     private async handleFormSubmit(form: HTMLFormElement): Promise<void> {
         const formData = new FormData(form);
-        const data: FormData = {
+        const data: ContactFormData = {
             name: formData.get('name') as string,
             email: formData.get('email') as string,
             service: formData.get('service') as string,
@@ -157,7 +163,7 @@ export class ContactService {
     /**
      * Submit form data (simulated)
      */
-    private async submitForm(data: FormData): Promise<void> {
+    private async submitForm(data: ContactFormData): Promise<void> {
         // Simulate API call
         return new Promise((resolve, reject) => {
             setTimeout(() => {
@@ -174,7 +180,7 @@ export class ContactService {
     /**
      * Generate Telegram message from form data
      */
-    private generateTelegramMessage(data: FormData): string {
+    private generateTelegramMessage(data: ContactFormData): string {
         return `
 طلب جديد من موقع فيجا للبرمجيات:
 
@@ -191,7 +197,7 @@ ${data.message}
     /**
      * Open Telegram with pre-filled message
      */
-    openTelegram(data: FormData): void {
+    openTelegram(data: ContactFormData): void {
         const message = this.generateTelegramMessage(data);
         const encodedMessage = encodeURIComponent(message);
         const telegramUrl = `https://t.me/TopVeGa?text=${encodedMessage}`;
