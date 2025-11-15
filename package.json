@@ -1,0 +1,20 @@
+{
+  "name": "vega-software-company",
+  "version": "1.0.0",
+  "description": "Vega Software Company - Modern TypeScript Website",
+  "main": "dist/js/main.js",
+  "scripts": {
+    "build": "tsc && npm run copy-assets",
+    "dev": "tsc --watch",
+    "serve": "live-server .",
+    "copy-assets": "cp -r src/assets dist/ && cp src/*.html dist/ && cp src/*.css dist/",
+    "start": "npm run build && npm run serve"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "live-server": "^1.2.2"
+  },
+  "keywords": ["typescript", "website", "vega", "software"],
+  "author": "VEGA Team",
+  "license": "MIT"
+}
