@@ -53,8 +53,9 @@ export class Navigation {
         });
 
         // Close mobile menu when clicking outside
-        DOMUtils.addEventListener(document, 'click', (e) => {
-            if (!this.navElement.contains(e.target as Node) && this.navMenu.classList.contains('active')) {
+        DOMUtils.addEventListener(document, 'click', (e: Event) => {
+            const target = e.target as Node;
+            if (!this.navElement.contains(target) && this.navMenu.classList.contains('active')) {
                 this.closeMobileMenu();
             }
         });
@@ -134,9 +135,9 @@ export class Navigation {
     }
 
     /**
-     * Navigate to section
+     * Navigate to section (public method)
      */
-    private navigateToSection(sectionId: string): void {
+    public navigateToSection(sectionId: string): void {
         const section = document.getElementById(sectionId);
         if (section) {
             DOMUtils.scrollToElement(section, 100);
