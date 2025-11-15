@@ -6,13 +6,13 @@
   "scripts": {
     "build": "tsc && npm run copy-assets",
     "dev": "tsc --watch",
-    "serve": "live-server .",
-    "copy-assets": "cp -r src/assets dist/ && cp src/*.html dist/ && cp src/*.css dist/",
+    "serve": "npx serve dist -s",
+    "copy-assets": "mkdir -p dist/css && cp src/css/*.css dist/css/ && cp src/index.html dist/",
     "start": "npm run build && npm run serve"
   },
   "devDependencies": {
     "typescript": "^5.3.3",
-    "live-server": "^1.2.2"
+    "serve": "^14.2.1"
   },
   "keywords": ["typescript", "website", "vega", "software"],
   "author": "VEGA Team",

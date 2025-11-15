@@ -10,10 +10,11 @@
     "forceConsistentCasingInFileNames": true,
     "moduleResolution": "node",
     "declaration": false,
-    "sourceMap": true,
+    "sourceMap": false,
     "removeComments": true,
     "noEmitOnError": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"]
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "types": []
   },
   "include": ["src/ts/**/*"],
   "exclude": ["node_modules", "dist"]
